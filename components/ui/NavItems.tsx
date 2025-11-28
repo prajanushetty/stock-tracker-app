@@ -11,7 +11,7 @@ export const NavItems = () => {
     pathName===path;
 
   return (
-    <div className="flex flex-col sm:flex-row p-2 gap-3 sm:gap-10 font-medium">{/*flex-col on small, flex-row on sm+*/}
+    <ul className="flex flex-col sm:flex-row p-2 gap-3 sm:gap-10 font-medium">{/*flex-col on small, flex-row on sm+*/}
       {NavItemsList.map(({title, href}) => (
         <li key={href} className="list-none">
           <Link href={href} className={`hover:text-yellow-50 transition-colors ${isActive(href) ? "text-yellow-50" : ""}`}>{/*normally grey color*/}
@@ -19,7 +19,7 @@ export const NavItems = () => {
           </Link>
         </li>
       ))}
-    </div> 
+    </ul>
   )
 }
 
