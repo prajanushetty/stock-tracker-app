@@ -497,20 +497,3 @@
 .scroll-x::-webkit-scrollbar {
   display: none; /* Chrome, Safari */
 }
-
-/* .marquee {
-  display: inline-block;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: clip;
-  animation: scroll-text 8s linear infinite;
-}
-
-@keyframes scroll-text {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-} */

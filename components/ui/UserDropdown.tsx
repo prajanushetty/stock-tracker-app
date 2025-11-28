@@ -33,7 +33,7 @@ const UserDropdown: React.FC<UserDropdownProps> = ({ user }) => {
         <DropdownMenuTrigger asChild>  
             <Button className="h-10 w-10 p-0 rounded-full bg-transparent overflow-hidden">
                 <Avatar className="w-full">
-                    <AvatarImage src={avatarUrl} alt="User Avatar" className="object-cover w-full h-full"/>
+                    <AvatarImage src={avatarUrl} alt={`${displayName}'s avatar`} className="object-cover w-full h-full"/>
                     <AvatarFallback className="w-full h-full flex items-center justify-center bg-yellow-500 text-yellow-900 text-xl font-bold">{userInitial}</AvatarFallback>
                 </Avatar>
             </Button>
@@ -42,7 +42,7 @@ const UserDropdown: React.FC<UserDropdownProps> = ({ user }) => {
                 <DropdownMenuLabel>
                     <div className="flex relative items-center gap-3 py-2">
                         <Avatar className="h-10 w-10">
-                            <AvatarImage src={avatarUrl} alt="User Avatar"/>
+                            <AvatarImage src={avatarUrl} alt={`${displayName}'s avatar`}/>
                             <AvatarFallback className="bg-yellow-500 text-yellow-900 text-xl font-bold">{userInitial}</AvatarFallback>
                         </Avatar>
                         <div className="flex flex-col max-w-40">
