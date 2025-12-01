@@ -13,7 +13,7 @@ interface UserDropdownProps {
   } | null;
 }
 
-const UserDropdown: React.FC<UserDropdownProps> = ({ user }) => {
+const UserDropdown = ({ user }: UserDropdownProps) => {
     const router = useRouter();
 
     const handleSignOut = () =>
