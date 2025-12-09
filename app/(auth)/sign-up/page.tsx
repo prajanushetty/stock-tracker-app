@@ -35,7 +35,7 @@ const SignUpPage = () => {
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         <InputField name='fullName' label='Full Name' placeholder='Enter your full name' register={register} 
             error={errors.fullName} validation={{required:'Name is required', minLength:2}}/>
-        <InputField name='email' label='Email' placeholder='Enter your email'
+        <InputField name='email' label='Email' placeholder='Enter your email' type='email'
             register={register} 
             error={errors.email} 
             validation={{required:'Email is required', minLength:2,

@@ -27,7 +27,7 @@ const SignInpage = () => {
     <div className="mt-15">
         <h1 className="form-title">Welcome Back</h1>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-          <InputField name='email' label='Email' placeholder='Enter your email'
+          <InputField name='email' label='Email' placeholder='Enter your email' type="email"
                   register={register} 
                   error={errors.email} 
                   validation={{required:'Email is required', minLength:2,
