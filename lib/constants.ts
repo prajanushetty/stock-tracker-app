@@ -26,6 +26,61 @@ export const PREFERRED_INDUSTRIES = [
     { value: 'Consumer Goods', label: 'Consumer Goods' },
 ];
 
+export const countryOptions = [
+  {
+    label: "India",
+    value: "IN",
+    flag: "https://flagcdn.com/w20/in.png",
+  },
+  {
+    label: "United States",
+    value: "US",
+    flag: "https://flagcdn.com/w20/us.png",
+  },
+  {
+    label: "United Kingdom",
+    value: "UK",
+    flag: "https://flagcdn.com/w20/gb.png",
+  },
+  {
+    label: "Canada",
+    value: "CA",
+    flag: "https://flagcdn.com/w20/ca.png",
+  },
+  {
+    label: "Australia",
+    value: "AU",
+    flag: "https://flagcdn.com/w20/au.png",
+  },
+  {
+    label: "Germany",
+    value: "DE",
+    flag: "https://flagcdn.com/w20/de.png",
+  },
+  {
+    label: "France",
+    value: "FR",
+    flag: "https://flagcdn.com/w20/fr.png",
+  },
+  {
+    label: "Singapore",
+    value: "SG",
+    flag: "https://flagcdn.com/w20/sg.png",
+  },
+  {
+    label: "United Arab Emirates",
+    value: "AE",
+    flag: "https://flagcdn.com/w20/ae.png",
+  },
+  {
+    label: "Japan",
+    value: "JP",
+    flag: "https://flagcdn.com/w20/jp.png",
+  },
+];
+
+
+
 export const ALERT_TYPE_OPTIONS = [
     { value: 'upper', label: 'Upper' },
     { value: 'lower', label: 'Lower' },
