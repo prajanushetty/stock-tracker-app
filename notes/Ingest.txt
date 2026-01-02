@@ -1,0 +1,5 @@
+Ingest
+Ingest will help you maintain the speed and reliability
+Ingest runs tasks in th ebackgrond, so users will have smooth experience.
+1. lets run background jobs like sending emails will not slow down the UI
+2. and retries until it succeed if failed

@@ -2,10 +2,14 @@
 import FooterLink from "@/components/forms/FooterLink";
 import InputField from "@/components/forms/inputField";
 import { Button } from "@/components/ui/button";
-import { SubmitHandler, useForm } from "react-hook-form";
-
+import { signInWithEmail } from "@/lib/actions/auth.actions";
+import { useRouter } from "next/navigation";
+import { useForm } from "react-hook-form";
+import {toast} from "sonner";
 
 const SignInpage = () => {
+  const router = useRouter();
+
   const {
   register,
   handleSubmit,
@@ -18,8 +22,14 @@ const SignInpage = () => {
     mode:'onBlur'
   });
 
-  const onSubmit:SubmitHandler<SignInFormData>=(data)=>{
-    console.log(data);
+  const onSubmit= async(data: SignInFormData)=>{
+    try{
+      const result = await signInWithEmail(data);
+      if(result.success) router.push('/');
+    }catch(e){
+      console.log(e);
+      toast.error('Error during sign in. Please try again.');
+    }
   }
 
   return (

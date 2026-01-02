@@ -1,6 +1,14 @@
+import { auth } from "@/lib/better-auth/auth";
+import { redirect } from "next/dist/client/components/navigation";
+import { headers } from "next/headers";
 import Image from "next/image"
 
-const layout =({children }: {children: React.ReactNode})=>{
+export const Layout = async ({children }: {children: React.ReactNode}) =>{
+    const session = await auth.api.getSession({headers: await headers()});
+
+    if(session?.user)
+        redirect('/dashboard');
+    
   return (
     <main className="auth-layout">
         <section className="auth-left-section scrollbar-hide-default">
@@ -40,5 +48,4 @@ const layout =({children }: {children: React.ReactNode})=>{
     </main>
   )
 }
-export default layout
 

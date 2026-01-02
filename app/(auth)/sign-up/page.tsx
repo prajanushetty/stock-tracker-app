@@ -3,12 +3,15 @@ import FooterLink from "@/components/forms/FooterLink";
 import InputField from "@/components/forms/inputField";
 import SelectField from "@/components/forms/SelectField";
 import { Button } from "@/components/ui/button";
+import { signUpWithEmail } from "@/lib/actions/auth.actions";
 import { countryOptions, INVESTMENT_GOALS, PREFERRED_INDUSTRIES, RISK_TOLERANCE_OPTIONS } from "@/lib/constants";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 
 //register
 const SignUpPage = () => {
-
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -26,9 +29,16 @@ const SignUpPage = () => {
     }
   });
 
-  const onSubmit: SubmitHandler<SignUpFormData>=(data)=>{
-    console.log(data);
+  const onSubmit: SubmitHandler<SignUpFormData> = async (data)=>{
+    try{
+      const result = await signUpWithEmail(data);
+      if(result.success) router.push('/login');
+    }catch(error){
+      console.error("Error submitting form:", error);
+      toast.error('Error during sign up. Please try again.');
+    }
   }
+
   return (
     <>
       <h1 className="form-title">Sign Up & Personize</h1>
