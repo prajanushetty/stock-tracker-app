@@ -1,4 +1,4 @@
-import mongoose from 'mongoose'
+import mongoose from 'mongoose';
 const MONGODB_URI= process.env.MONGODB_URI;
 
 declare global{
@@ -34,7 +34,7 @@ export const connectToDatabase= async()=>
         cached.promise=mongoose.connect(MONGODB_URI, {bufferCommands:false})
     }
 
-    //it waits for the same connection
+    //if promise exists it waits for the same connection
     try{
         cached.conn = await cached.promise;
         //and saves it in the cache
@@ -46,5 +46,5 @@ export const connectToDatabase= async()=>
         throw err;
     }
     console.log(`Connected to database ${process.env.NODE_ENV} ${MONGODB_URI}`);
-    
+    return cached.conn;
 }

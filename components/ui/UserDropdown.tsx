@@ -4,6 +4,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel,
 import { LogOut } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { Button } from "./button";
+import { signOut } from "@/lib/actions/auth.actions";
 
 interface UserDropdownProps {
   user?: {
@@ -16,8 +17,9 @@ interface UserDropdownProps {
 const UserDropdown = ({ user }: UserDropdownProps) => {
     const router = useRouter();
 
-    const handleSignOut = () =>
+    const handleSignOut = async () =>
     {
+        await signOut();
         // TODO: Add actual sign-out logic here
         // e.g., await signOut() or clear authentication tokens
         router.push("/sign-in")
